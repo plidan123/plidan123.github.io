@@ -1,0 +1,80 @@
+@font-face {
+  font-family: 'MinecraftFont'; /* Название шрифта */
+  src: url('minecraft-font.ttf') format('truetype'); /* Путь к файлу шрифта */
+}
+
+body {
+  background-image: url('back.jpg'); /* Путь к вашему фону */
+  background-size: cover; /* Заполнить весь экран */
+  color: white; /* Цвет текста */
+  font-family: 'MinecraftFont', cursive; /* Используем загруженный шрифт для всего текста */
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.section {
+  display: none;
+}
+
+.menu {
+  margin-top: 20vh;
+  background-color: rgba(0, 0, 0, 0); /* Полупрозрачный фон для меню */
+  border: 0px solid #1c1c1c; /* Темная граница */
+  border-radius: 10px;
+  padding: 15px;
+}
+
+h1 {
+  font-size: 70px;
+  text-shadow: 2px 2px 5px black;
+}
+
+button {
+  background-image: url('knopka.png'); /* Путь к вашему изображению */
+  background-size: cover; /* Установите размер изображения */
+  background-repeat: no-repeat; /* Не повторять изображение */
+  background-position: center; /* Центрировать изображение */
+  width: 220px; /* Установите фиксированную ширину кнопки */
+  height: 70px; /* Установите высоту кнопки */
+  border: 0; /* Уберите границу */
+  border-radius: 0; /* Закругленные края */
+  color: gainsboro; /* Цвет текста */
+  font-size: 25px; /* Размер шрифта */ /* Внутренние отступы */
+  cursor: pointer; /* Указатель при наведении */
+  text-shadow: 2px 2px 3px black; /* Тень текста */
+  margin: 10px; /* Отступы между кнопками */
+  font-family: 'MinecraftFont', cursive; /* Ваш шрифт */
+  transition: transform 1s; /* Плавный переход */
+  white-space: normal; /* Позволяет тексту переноситься на новую строку */
+  margin-right: 15px;
+}
+
+button:hover {
+  background-image: url('knopka.png'); /* Цвет кнопки при наведении */
+  transform: scale(1.2); /* Увеличение при наведении */
+}
+
+
+
+.section:target {
+  background-color: rgba(1, 4, 0, 0.5);
+  padding: 1px 50px;
+  text-align: center;
+  font-size: 20px;
+  width: 600px;
+  height: 190px;
+  margin: 0 auto;
+  display: block; /* Показать секцию, если она выбрана */
+  margin-top: 20px;
+  white-space: normal; /* Позволяет тексту переноситься на новую строку */
+  flex-direction: column; /* Или row, в зависимости от того, как вы хотите их расположить */
+  align-items: center; /* Центрируем кнопки по вертикали */
+  border-radius: 5px; /* Закругленные края */
+
+}
+.audio {
+  display: flex; /* Используйте flexbox для управления расположением */
+  justify-content: center; /* Центрируем плеер по горизонтали */
+  margin-top: 15px; /* Отступ сверху */
+}

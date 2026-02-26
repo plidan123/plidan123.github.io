@@ -7,39 +7,66 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="menu">
-  <h1>plidan</h1>
-  <div class="buttons">
-    <button onclick="location.href='#about'">about me</button>
-    <button onclick="location.href='#portfolio'">projects</button>
-    <button onclick="location.href='#contact'">socials</button>
+
+<!-- Первый фон: только меню -->
+<section class="bg bg-1">
+  <div class="menu">
+    <h1>plidan</h1>
+
+    <div class="buttons">
+      <button class="menu-btn" data-target="about">about me</button>
+      <button class="menu-btn" data-target="portfolio">projects</button>
+      <button class="menu-btn" data-target="contact">socials</button>
+    </div>
   </div>
-</div>
+</section>
 
-<div id="about" class="section">
-  <h2>Обо мне</h2>
-  <p>Ученик первого курса ВШЭ СПБ ПАДИИ.
-    В перспективе очень полезный и высококвалифицированный работник Яндекса,
-    а пока начинающий C++/Python-developer</p>
-</div>
+<!-- Второй фон: тут показываем по очереди секции -->
+<section class="bg bg-2">
+  <div class="panel">
 
-<div id="portfolio" class="section">
-  <h2>Портфолио</h2>
-  <p>Здесь будет мое портфолио.</p>
-</div>
+    <div id="about" class="section active">
+      <h2>Обо мне</h2>
+      <p>Ученик первого курса ВШЭ СПБ ПАДИИ.
+        В перспективе очень полезный и высококвалифицированный работник,
+        а пока начинающий C++/Python-developer</p>
+    </div>
 
-<div id="contact" class="section">
-  <h2>Контакты</h2>
-  <p>Telegram: @plidan</p>
-  <p>VK: @plidan</p>
-  <p>mail: plyugind@yandex.ru</p>
-</div>
-<div class="audio">
-  <audio controls autoplay loop>
-  <source src="c418.mp3" type="audio/mpeg">
-  Ваш браузер не поддерживает воспроизведение аудио.
-</audio>
-</div>
+    <div id="portfolio" class="section">
+      <h2>Портфолио</h2>
+      <p>Тут будут проекты…</p>
+    </div>
+
+    <div id="contact" class="section">
+      <h2>Контакты</h2>
+      <p>Telegram: @plidan</p>
+      <p>VK: @plidan</p>
+      <p>mail: plyugind@yandex.ru</p>
+    </div>
+
+    <div class="audio">
+      <audio controls autoplay loop>
+        <source src="c418.mp3" type="audio/mpeg">
+        Ваш браузер не поддерживает воспроизведение аудио.
+      </audio>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  const buttons = document.querySelectorAll('.menu-btn');
+  const sections = document.querySelectorAll('.section');
+
+  function showSection(id) {
+    sections.forEach(s => s.classList.toggle('active', s.id === id));
+    // не скроллим автоматически; пользователь сам листает
+  }
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => showSection(btn.dataset.target));
+  });
+</script>
 
 </body>
 </html>

@@ -17,30 +17,30 @@ html, body {
 
 .bg {
   min-height: 100vh;
-  background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
+/* 1-й экран — по центру (как было) */
 .bg-1{
   min-height: 100vh;
   display: flex;
-  align-items: center;     /* по вертикали */
-  justify-content: center; /* по горизонтали */
+  align-items: center;
+  justify-content: center;
+
   background-image: url("back.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-position: center;      /* явно */
 }
+
+/* 2-й экран — верх обязательно виден, обрезается низ */
 .bg-2 {
   min-height: 100vh;
-  display: flex;
-  align-items: center; /* по вертикали */
-  justify-content: center; /* по горизонтали */
-  background-image: url("back2.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  height: auto;
+  display: block;
+  padding: 40px 0 120px;
+
+  background-image: url("back2.JPEG");
+  background-position: top center;  /* ВОТ ТУТ */
 }
 
 .section { display: none; }

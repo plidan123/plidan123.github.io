@@ -40,6 +40,7 @@ button {
   border: 0; /* Уберите границу */
   border-radius: 0; /* Закругленные края */
   color: gainsboro; /* Цвет текста */
+  filter: brightness(0.75);
   font-size: 25px; /* Размер шрифта */ /* Внутренние отступы */
   cursor: pointer; /* Указатель при наведении */
   text-shadow: 2px 2px 3px black; /* Тень текста */
@@ -53,6 +54,7 @@ button {
 button:hover {
   background-image: url('knopka.png'); /* Цвет кнопки при наведении */
   transform: scale(1.2); /* Увеличение при наведении */
+  filter: brightness(1.05);
 }
 
 

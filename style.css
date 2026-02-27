@@ -26,12 +26,12 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url("back.jpg");
+  background-image: url("catback.jpg");
 }
 
 /* 2-й экран */
 .bg-2{
-  background-image: url("back2.JPEG");
+  background-image: url("back2.jpg");
   display: block;
   padding: 40px 0 120px;
 }

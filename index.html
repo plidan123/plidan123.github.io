@@ -4,106 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Портфолио</title>
-
-  <style>
-    @font-face {
-      font-family: 'MinecraftFont';
-      src: url('minecraft-font.ttf') format('truetype');
-    }
-
-    html, body { margin: 0; padding: 0; }
-    body {
-      color: white;
-      font-family: 'MinecraftFont', cursive;
-      text-align: center;
-    }
-
-    .bg{
-      min-height: 100vh;
-      background-position: center;
-      background-size: cover;
-      background-repeat: no-repeat;
-    }
-
-    /* 1-й экран */
-    .bg-1{
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-image: url("back.jpg");
-    }
-
-    /* 2-й экран */
-    .bg-2{
-      background-image: url("back2.JPEG");
-      /* чтобы секции шли вниз как обычная страница */
-      display: block;
-      padding: 40px 0 120px;
-    }
-
-    .menu{
-      background: rgba(0,0,0,0);
-      padding: 15px;
-    }
-
-    h1{
-      font-size: 70px;
-      text-shadow: 2px 2px 5px black;
-      margin: 0 0 20px 0;
-    }
-
-    button{
-      background-image: url('knopka.png');
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: 103% 107%;
-      width: 220px;
-      height: 70px;
-      border: 0;
-      border-radius: 8px;
-      color: gainsboro;
-      font-size: 25px;
-      cursor: pointer;
-      text-shadow: 2px 2px 3px black;
-      margin: 10px 15px 10px 10px;
-      font-family: 'MinecraftFont', cursive;
-      filter: brightness(0.85);
-      transition: filter 400ms ease, transform 800ms ease;
-      white-space: normal;
-      outline: none;
-    }
-
-    button:hover{
-      transform: scale(1.1);
-      filter: brightness(1.1);
-    }
-
-    /* секции теперь ВСЕ видны */
-    .section{
-      display: block;
-      background-color: rgba(1, 4, 0, 0.5);
-      padding: 20px 50px;
-      font-size: 20px;
-      width: min(600px, 92vw);
-      margin: 20px auto 0;
-      border-radius: 10px;
-    }
-
-    h2{ margin: 0 0 12px 0; text-shadow: 2px 2px 4px black; }
-    p{ margin: 10px 0; }
-
-    .audio{
-      position: fixed;
-      left: 50%;
-      bottom: 20px;
-      transform: translateX(-50%);
-      z-index: 999;
-    }
-
-    .audio audio{
-      width: min(520px, 92vw);
-    }
-  </style>
+<link rel="stylesheet" href="style.css?v=1">
 </head>
 
 <body>
@@ -122,33 +23,159 @@
 <section class="bg bg-2" id="second">
   <div class="panel">
 
-    <div id="about" class="section">
-      <h2>Обо мне</h2>
-      <p>Ученик первого курса ВШЭ СПБ ПАДИИ.
-        В перспективе очень полезный и высококвалифицированный работник,
-        а пока начинающий C++/Python-developer</p>
+  <!-- ABOUT -->
+  <div id="about" class="section">
+    <div class="profile">
+      <img class="avatar" src="ava.jpg" alt="Фото" width="170" height="170" />
+      <div class="profile-text">
+        <h2>Плюгин Даниил</h2>
+        <p>Студент Школы Информатики, Физики и Технологий, НИУ ВШЭ (Санкт-Петербург)</p>
+      </div>
     </div>
 
-    <div id="portfolio" class="section">
-      <h2>Портфолио</h2>
-      <p>Тут будут проекты…</p>
-    </div>
-
-    <div id="contact" class="section">
-      <h2>Контакты</h2>
-      <p>Telegram: @plidan</p>
-      <p>VK: @plidan</p>
-      <p>mail: plyugind@yandex.ru</p>
-    </div>
-
-    <div class="audio">
-      <audio controls autoplay loop>
-        <source src="c418.mp3" type="audio/mpeg">
-        Ваш браузер не поддерживает воспроизведение аудио.
-      </audio>
-    </div>
-
+    <h3>Коротко обо мне</h3>
+    <p>
+      Учусь на программе «Прикладной анализ данных и ИИ». Интересы: Data Science, количественные финансы,
+      алгоритмические системы. Пишу на Python/C++, люблю математику.
+      алгоритмические системы. Пишу на Python/C++, люблю математику.
+    </p>
   </div>
+
+  <!-- EDUCATION -->
+  <div id="education" class="section">
+    <h2>Образование</h2>
+    <p><b>НИУ ВШЭ, Санкт-Петербург</b> — бакалавриат, «Прикладной анализ данных и ИИ»</p>
+    <p>2024 — настоящее время</p>
+
+    <h3>Ключевые дисциплины</h3>
+    <ul class="list">
+      <li>математический анализ</li>
+      <li>линейная алгебра</li>
+      <li>теория вероятностей и матстатистика</li>
+      <li>алгоритмы и структуры данных</li>
+      <li>статистическое моделирование</li>
+    </ul>
+  </div>
+
+  <!-- SKILLS -->
+  <div id="skills" class="section">
+    <h2>Навыки</h2>
+
+    <h3>Языки</h3>
+    <p>Python, C++, SQL, LaTeX</p>
+
+    <h3>Python</h3>
+    <ul class="list">
+      <li>NumPy, SciPy, Pandas, Matplotlib</li>
+      <li>статистическое моделирование</li>
+      <li>численные методы</li>
+      <li>генерация случайных величин, работа с распределениями</li>
+    </ul>
+
+    <h3>Алгоритмы и структуры данных</h3>
+    <ul class="list">
+      <li>графы</li>
+      <li>динамическое программирование</li>
+      <li>жадные алгоритмы</li>
+      <li>поиск/сортировки/хэш-структуры</li>
+      <li>асимптотический анализ</li>
+    </ul>
+
+    <h3>Математическая база</h3>
+    <p>теория вероятностей, математическая статистика, линейная алгебра, оптимизация, численные методы</p>
+
+    <h3>Инструменты</h3>
+    <p>Git, Linux, Bash, CMake, Jupyter Notebook</p>
+  </div>
+
+  <!-- PROJECTS -->
+  <div id="portfolio" class="section">
+    <h2>Проекты</h2>
+
+    <div class="card">
+      <h3>Библиотека нормальных смесей (Normal Mean/Variance Mixtures)</h3>
+      <p>Python-проект для моделирования и исследования сложных вероятностных распределений.</p>
+      <ul class="list">
+        <li>реализация классов NMM, NVM и NMVM</li>
+        <li>генерация выборок, вычисление плотности и функции распределения</li>
+        <li>лог-плотность и вычисление моментов</li>
+        <li>численная оценка параметров</li>
+        <li>методы Randomized Quasi Monte Carlo (RQMC)</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>BigInt на C++</h3>
+      <p>Собственный класс для работы с числами произвольной длины.</p>
+      <ul class="list">
+        <li>базовые арифметические операции</li>
+        <li>оптимизация хранения (векторная реализация)</li>
+        <li>поддержка знаковых чисел</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Геометрический движок (C++)</h3>
+      <p>Модуль обработки команд движения в 2D-пространстве.</p>
+      <ul class="list">
+        <li>работа с векторами и координатной геометрией</li>
+        <li>парсинг текстовых команд</li>
+        <li>анализ траектории и вычисление итогового положения</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Алгоритмические проекты и контесты</h3>
+      <p>Регулярно решаю задачи по алгоритмам и структурам данных.</p>
+      <ul class="list">
+        <li>кратчайшие пути</li>
+        <li>графы и потоки</li>
+        <li>комбинаторная оптимизация</li>
+        <li>динамическое программирование</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Учебные аналитические проекты</h3>
+      <p>Модели регрессии, классификации и кластеризации в рамках учебных работ.</p>
+      <ul class="list">
+        <li>линейная и логистическая регрессия</li>
+        <li>SVM</li>
+        <li>PCA</li>
+        <li>кластеризация (KMeans, DBSCAN)</li>
+        <li>базовый анализ данных и визуализация</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- EXTRA -->
+  <div id="extra" class="section">
+    <h2>Дополнительно</h2>
+    <ul class="list">
+      <li>уверенный LaTeX (оформление научных и технических работ)</li>
+      <li>английский: B2 (чтение техдокументации)</li>
+      <li>интерес к Data Science, количественным финансам и алгоритмическим системам</li>
+    </ul>
+  </div>
+
+  <!-- CONTACTS -->
+  <div id="contact" class="section">
+    <h2>Контакты</h2>
+    <p><b>Email:</b> <a href="mailto:plyugind@yandex.ru">plyugind@yandex.ru</a></p>
+    <p><b>Telegram:</b> <a href="https://t.me/plidan" target="_blank" rel="noopener">@plidan</a></p>
+    <p><b>GitHub:</b> <a href="https://github.com/plidan123" target="_blank" rel="noopener">github.com/plidan123</a></p>
+    <p><b>Сайт:</b> <a href="https://plidan123.github.io/" target="_blank" rel="noopener">plidan123.github.io</a></p>
+  </div>
+
+  <!-- AUDIO -->
+  <div class="audio">
+    <audio controls autoplay loop>
+      <source src="c418.mp3" type="audio/mpeg">
+      Ваш браузер не поддерживает воспроизведение аудио.
+    </audio>
+  </div>
+
+</div>
 </section>
 
 <script>

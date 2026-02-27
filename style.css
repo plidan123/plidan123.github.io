@@ -1,126 +1,164 @@
 @font-face {
-  font-family: 'MinecraftFont'; /* Название шрифта */
-  src: url('minecraft-font.ttf') format('truetype'); /* Путь к файлу шрифта */
+  font-family: 'MinecraftFont';
+  src: url('minecraft-font.ttf') format('truetype');
 }
 
+html, body { margin: 0; padding: 0; }
+
 body {
-  color: white; /* Цвет текста */
-  font-family: 'MinecraftFont', cursive; /* Используем загруженный шрифт для всего текста */
+  color: white;
+  font-family: 'MinecraftFont', cursive;
   text-align: center;
   margin: 0;
   padding: 0;
 }
-html, body {
-  margin: 0;
-  padding: 0;
-}
 
-.bg {
+/* фоновые секции */
+.bg{
   min-height: 100vh;
+  background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
-/* 1-й экран — по центру (как было) */
+/* 1-й экран */
 .bg-1{
-  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-
   background-image: url("back.jpg");
-  background-position: center;      /* явно */
 }
 
-/* 2-й экран — верх обязательно виден, обрезается низ */
-.bg-2 {
-  min-height: 100vh;
-  height: auto;
+/* 2-й экран */
+.bg-2{
+  background-image: url("back2.JPEG");
   display: block;
   padding: 40px 0 120px;
-
-  background-image: url("back2.JPEG");
-  background-position: top center;  /* ВОТ ТУТ */
 }
 
-.section { display: none; }
-
-.menu {
-  margin-top: 20vh;
-  background-color: rgba(0, 0, 0, 0); /* Полупрозрачный фон для меню */
-  border: 0px solid #1c1c1c; /* Темная граница */
-  border-radius: 10px;
+/* меню */
+.menu{
+  background: rgba(0,0,0,0);
   padding: 15px;
 }
 
-h1 {
+h1{
   font-size: 70px;
   text-shadow: 2px 2px 5px black;
+  margin: 0 0 20px 0;
 }
 
-button {
-  background-image: url('knopka.png'); /* Путь к вашему изображению */
-  background-size: cover; /* Установите размер изображения */
-  background-repeat: no-repeat; /* Не повторять изображение */
-  background-position: center; /* Центрировать изображение */
-  width: 220px; /* Установите фиксированную ширину кнопки */
-  height: 70px; /* Установите высоту кнопки */
-  border: 0; /* Уберите границу */
-  border-radius: 0; /* Закругленные края */
-  color: gainsboro; /* Цвет текста */
-  filter: brightness(0.85);
+/* кнопки */
+button{
+  background-image: url('knopka.png');
+  background-repeat: no-repeat;
+  background-position: center;
   background-size: 103% 107%;
+  width: 220px;
+  height: 70px;
+  border: 0;
   border-radius: 8px;
-  font-size: 25px; /* Размер шрифта */ /* Внутренние отступы */
-  cursor: pointer; /* Указатель при наведении */
-  text-shadow: 2px 2px 3px black; /* Тень текста */
-  margin: 10px; /* Отступы между кнопками */
-  font-family: 'MinecraftFont', cursive; /* Ваш шрифт */
-  transition: filter 400ms ease, transform 800ms ease; /* Плавный переход */
-  white-space: normal; /* Позволяет тексту переноситься на новую строку */
-  margin-right: 15px;
+  color: gainsboro;
+  font-size: 25px;
+  cursor: pointer;
+  text-shadow: 2px 2px 3px black;
+  margin: 10px 15px 10px 10px;
+  font-family: 'MinecraftFont', cursive;
+  filter: brightness(0.85);
+  transition: filter 400ms ease, transform 800ms ease;
+  white-space: normal;
+  outline: none;
 }
 
-button:hover {
-  background-image: url('knopka.png'); /* Цвет кнопки при наведении */
-  transform: scale(1.1); /* Увеличение при наведении */
+button:hover{
+  transform: scale(1.1);
   filter: brightness(1.1);
 }
 
-.section.active {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
+/* секции ВИДНЫ (как было в html) */
+.section{
+  display: block;
   background-color: rgba(1, 4, 0, 0.5);
   padding: 20px 50px;
-  text-align: center;
   font-size: 20px;
-
   width: min(600px, 92vw);
-  height: auto;
   margin: 20px auto 0;
-
   border-radius: 10px;
+
+  /* читаемость */
+  font-size: 16px;
+  line-height: 1.55;
+  letter-spacing: 0.2px;
 }
 
-/*.section:target {*/
-/*  background-color: rgba(1, 4, 0, 0.5);*/
-/*  padding: 1px 50px;*/
-/*  text-align: center;*/
-/*  font-size: 20px;*/
-/*  width: 600px;*/
-/*  height: 190px;*/
-/*  margin: 0 auto;*/
-/*  display: block; !* Показать секцию, если она выбрана *!*/
-/*  margin-top: 20px;*/
-/*  white-space: normal; !* Позволяет тексту переноситься на новую строку *!*/
-/*  flex-direction: column; !* Или row, в зависимости от того, как вы хотите их расположить *!*/
-/*  align-items: center; !* Центрируем кнопки по вертикали *!*/
-/*  border-radius: 5px; !* Закругленные края *!*/
+h2{ margin: 0 0 12px 0; text-shadow: 2px 2px 4px black; }
+p{ margin: 10px 0; }
 
-/*}*/
-.audio {
+/* подзаголовки внутри секций */
+.section h3{
+  font-size: 18px;
+  line-height: 1.25;
+  margin: 18px 0 8px 0;
+}
+
+/* текст внутри секций */
+.section p,
+.section li,
+.section a,
+.section .quick-item{
+  font-size: 16px;
+  line-height: 1.55;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.85);
+}
+
+.section ul{ margin-top: 8px; }
+
+.section a{
+  color: white;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+/* фото */
+.avatar{
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+
+/* about header */
+.profile{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.profile-text{ max-width: 420px; }
+
+/* списки */
+.list{
+  margin: 10px 0 0 22px;
+  padding: 0;
+  text-align: left;
+}
+
+/* карточки */
+.card{
+  margin-top: 14px;
+  padding: 14px 16px;
+  border-radius: 10px;
+  background: rgba(0,0,0,0.25);
+  text-align: left;
+}
+
+/* аудио */
+.audio{
   position: fixed;
   left: 50%;
   bottom: 20px;
@@ -128,6 +166,42 @@ button:hover {
   z-index: 999;
 }
 
-.audio audio {
-  width: min(200px, 92vw);
+.audio audio{
+  width: min(520px, 92vw);
 }
+
+/* убрать отдельное затемнение у каждого проекта */
+.card{
+  background: transparent !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  margin-top: 18px !important; /* оставим расстояние между проектами */
+}
+
+/* если хочешь чуть разделять проекты без фона — тонкая линия */
+#portfolio .card{
+  border-top: 2px solid rgba(255,255,255,0.12);
+  padding-top: 14px !important;
+}
+#portfolio .card:first-child{
+  border-top: 0;
+  padding-top: 0 !important;
+}
+
+/* фикс для телефонов: блоки не должны вылезать за экран */
+.section{
+  width: 100% !important;
+  max-width: 600px !important;
+  box-sizing: border-box !important;   /* padding входит в ширину */
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* на узких экранах уменьшаем боковые отступы */
+@media (max-width: 520px){
+  .section{
+    padding: 16px 14px !important;     /* вместо 50px */
+  }
+}
+
+html, body{ overflow-x: hidden; }
